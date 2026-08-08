@@ -1,5 +1,4 @@
 import {test, expect} from '@playwright/test';
-import { faker } from '@faker-js/faker';
 
 test('deve poder cadastrar uma nova tarefa', async ({page, request })=> {
 
@@ -19,6 +18,7 @@ test('deve poder cadastrar uma nova tarefa', async ({page, request })=> {
    await page.click('css=button >> text=Create');
   
    //Então devo ver esta tarefa na lista
-   const target = page.locator('.task-item');
-   await expect(target).toHaveText(taskName);
-});
+  // const target = page.locator('.task-item');
+  const target = page.locator(`css=.task-item p >> text=${taskName}`)
+  await expect(target).toBeVisible()
+})
