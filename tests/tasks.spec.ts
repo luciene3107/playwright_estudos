@@ -19,6 +19,6 @@ test('deve poder cadastrar uma nova tarefa', async ({page, request })=> {
    await page.click('css=button >> text=Create');
   
    //Então devo ver esta tarefa na lista
-   const target = page.getByTestId('task-item');
+   const target = page.locator('.task-item');
    await expect(target).toHaveText(taskName);
 });
