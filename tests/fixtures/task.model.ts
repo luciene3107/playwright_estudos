@@ -1,4 +1,4 @@
 export interface TaskModel {
-  name: String,
-  is_done: Boolean
+  name: string,
+  is_done: boolean
 }
